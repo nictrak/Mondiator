@@ -1,4 +1,5 @@
 import React from "react"
+import { gridToAbsolute } from "./gameLogic"
 import { render } from "@testing-library/react"
 
 
@@ -12,11 +13,6 @@ const Tile = (props) => {
         <img src={require('../sprite/tile.png')} style={{ position: "absolute", width: size, height: size, left: x, top: y}}/>
     )
 }
-
-const gridToAbsolute = (gridPostion, boardPosition) => ({
-    x: (gridPostion.x-3.5)*68 + boardPosition.x,
-    y: (gridPostion.y-3.5)*68 + boardPosition.y
-})
 
 const renderTile = (indexX, indexY, boardPosition) => <Tile position={gridToAbsolute(index2D(indexX, indexY),boardPosition)}/>
 
