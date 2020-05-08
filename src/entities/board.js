@@ -1,5 +1,5 @@
 import React from "react"
-import { gridToAbsolute } from "./gameLogic"
+import { gridToAbsolute } from "../gameLogic"
 import { render } from "@testing-library/react"
 
 
