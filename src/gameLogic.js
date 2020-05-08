@@ -7,3 +7,5 @@ export const boardPosition = () =>({
     x: 640,
     y: 300
 })
+
+export const index2D = (indexX, indexY) => ({x: indexX, y: indexY})

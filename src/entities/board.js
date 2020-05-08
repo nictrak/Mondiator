@@ -1,9 +1,7 @@
 import React from "react"
-import { gridToAbsolute } from "../gameLogic"
+import { gridToAbsolute, index2D } from "../gameLogic"
 import { render } from "@testing-library/react"
 
-
-const index2D = (indexX, indexY) => ({x: indexX, y: indexY})
 
 const Tile = (props) => {
     const size = 64;
