@@ -18,4 +18,7 @@ export const absoluteToRenderPosition = (absolutePosition, size) => ({
     y: absolutePosition.y - size.y / 2
 })
 
+export const gridToRenderPosition = (gridPostion, size) => absoluteToRenderPosition(gridToAbsolute(gridPostion), size)
+
+
 export const index2D = (indexX, indexY) => ({x: indexX, y: indexY})

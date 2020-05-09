@@ -45,10 +45,7 @@ const renderBoard = (boardPosition) => {
 
 
 const Board = (props) => {
-    const numbers = [0, 1, 2, 3, 4, 5, 6, 7]
     const position = boardPosition()
-    const indexX = 0
-    const indexY = 0
     return(
         <div>
             {renderBoard(position)}
