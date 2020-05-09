@@ -1,5 +1,5 @@
 import React from "react"
-import {gridToAbsolute, boardPosition} from "../gameLogic"
+import {gridToAbsolute, boardPosition, tileSize, absoluteToRenderPosition} from "../gameLogic"
 
 
 const requireSprite = (name) => require("../sprite/"+name+".png")
@@ -9,11 +9,10 @@ const Monster = props => {
     const name = props.name
     const position = gridToAbsolute(gridPosition, boardPosition())
     const sprite = requireSprite(name)
-    const size = 64;
-    const x = position.x - size / 2;
-    const y = position.y - size / 2;
+    const size = tileSize()
+    const renderPosition = absoluteToRenderPosition(position, size)
     return (
-        <img src={sprite} style={{ position: "absolute", width: size, height: size, left: x, top: y}}/>        
+        <img src={sprite} style={{ position: "absolute", width: size.x, height: size.y, left: renderPosition.x, top: renderPosition.y}}/>        
     )
 }
 

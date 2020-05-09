@@ -14,7 +14,7 @@ export default class App extends PureComponent {
             //-- Notice that each entity has a unique id (required)
             //-- and a renderer property (optional). If no renderer
             //-- is supplied with the entity - it won't get displayed.
-            board: { position: boardPosition(),renderer: <Board />},
+            board: {renderer: <Board />},
             player0: {gridPosition: {x: 0, y: 0}, name: "prototype", renderer: <Monster />}
           }}>
         </GameEngine>

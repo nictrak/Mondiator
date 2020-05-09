@@ -1,14 +1,13 @@
 import React from "react"
-import { gridToAbsolute, index2D } from "../gameLogic"
+import { gridToAbsolute, index2D, boardPosition, tileSize, absoluteToRenderPosition } from "../gameLogic"
 import { render } from "@testing-library/react"
 
 
 const Tile = (props) => {
-    const size = 64;
-    const x = props.position.x - size / 2;
-    const y = props.position.y - size / 2;
+    const size = tileSize();
+    const renderPosition = absoluteToRenderPosition(props.position, size)
     return (
-        <img src={require('../sprite/tile.png')} style={{ position: "absolute", width: size, height: size, left: x, top: y}}/>
+        <img src={require('../sprite/tile.png')} style={{ position: "absolute", width: size.x, height: size.y, left: renderPosition.x, top: renderPosition.y}}/>
     )
 }
 
@@ -47,7 +46,7 @@ const renderBoard = (boardPosition) => {
 
 const Board = (props) => {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7]
-    const position = props.position
+    const position = boardPosition()
     const indexX = 0
     const indexY = 0
     return(
